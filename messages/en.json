@@ -1,0 +1,20 @@
+{
+  "SignUp": {
+    "title": "Sign Up",
+    "alreadyHaveAccount": "Already have an Account Login",
+    "login": "Login",
+    "signupAgree": "By signing up you agree to our",
+    "termsConditions": "Terms & Conditions",
+    "createAccount": "Create Account",
+    "fullName": "Full Name",
+    "email": "email",
+    "password": "Password",
+    "subTitle": "Millions of Product Ready to Dropship",
+    "description": "Millions of Product Ready to Dropship. Millions of Product Ready to Dropship. Millions of Product Ready to Dropship.",
+    "fullNameRequired" : "Full Name is required",
+    "emailRequired": "Email is required",
+    "emailPattern": "Enter a valid email",
+    "passwordRequired": "Password is required",
+    "passwordPattern": "Password should contain one Capital Letter, one Small Letter, and the number of characters should be between 6 to 15"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "SignUp": {
+    "title": "Registrarse",
+    "alreadyHaveAccount": "¿Ya tienes una cuenta? Inicia sesión",
+    "login": "Iniciar sesión",
+    "signupAgree": "Al registrarte, aceptas nuestros",
+    "termsConditions": "Términos y condiciones",
+    "createAccount": "Crear cuenta",
+    "fullName": "Nombre completo",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "subTitle": "Millones de productos listos para envío directo",
+    "description": "Millones de productos listos para envío directo. Millones de productos listos para envío directo. Millones de productos listos para envío directo.",
+    "fullNameRequired": "Se requiere el nombre completo",
+    "emailRequired": "Se requiere el correo electrónico",
+    "emailPattern": "Ingresa un correo electrónico válido",
+    "passwordRequired": "Se requiere la contraseña",
+    "passwordPattern": "La contraseña debe contener una letra mayúscula, una letra minúscula y tener entre 6 y 15 caracteres"
+  }
+}

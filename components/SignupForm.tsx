@@ -1,11 +1,13 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+import { Controller, FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { Box, Button, IconButton, InputAdornment, TextField, Typography } from '@mui/material';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 import Image from 'next/image';
 import Link from 'next/link';
+import PhoneInputWithCountry from "react-phone-number-input/react-hook-form"
+import 'react-phone-number-input/style.css'
 
 interface FormData {
   fullName: string;
@@ -27,7 +29,8 @@ interface SignupFormProps {
   emailRequired: string,
   emailPattern: string,
   passwordRequired: string,
-  passwordPattern: string
+  passwordPattern: string,
+  mobileNumberRequired: string
 }
 
 const SignupForm = ({
@@ -42,15 +45,11 @@ const SignupForm = ({
   emailRequired,
   emailPattern,
   passwordPattern,
-  passwordRequired
+  passwordRequired,
+  mobileNumberRequired
 }: SignupFormProps) => {
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
+  const { register, handleSubmit, formState: { errors }, control } = useForm<FormData>();
   const [showPassword, setShowPassword] = useState(false);
-
-  useEffect(() => {
-    console.log(errors);
-  }, [errors])
-
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
   };
@@ -154,6 +153,15 @@ const SignupForm = ({
           helperText={errors?.email?.message?.toString()}
         />
 
+        <PhoneInputWithCountry
+          name="mobileNumber"
+          control={control}
+          international
+          countryCallingCodeEditable={false}
+          rules={{ required: mobileNumberRequired }}
+          defaultCountry="US"
+          className='bg-[#D9D9D94D] p-4 mt-4 mb-2 rounded-md'
+          />
         <TextField
           label={passwordLabel}
           type={showPassword ? 'text' : 'password'}
@@ -195,6 +203,7 @@ const SignupForm = ({
           }}
           inputProps={{
             maxLength: 100,
+            autoComplete: 'new-password',
           }}
           {...register('password', {
             required: passwordRequired,

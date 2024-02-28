@@ -15,6 +15,7 @@
     "emailRequired": "Se requiere el correo electrónico",
     "emailPattern": "Ingresa un correo electrónico válido",
     "passwordRequired": "Se requiere la contraseña",
-    "passwordPattern": "La contraseña debe contener una letra mayúscula, una letra minúscula y tener entre 6 y 15 caracteres"
+    "passwordPattern": "La contraseña debe contener una letra mayúscula, una letra minúscula y tener entre 6 y 15 caracteres",
+    "mobileNumberRequired": "Se requiere número de teléfono"
   }
 }

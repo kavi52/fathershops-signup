@@ -29,6 +29,7 @@ export default function Home() {
           passwordPattern={t('passwordPattern')}
           passwordRequired={t('passwordRequired')}
           submitText={t('createAccount')}
+          mobileNumberRequired={t('mobileNumberRequired')}
         />
         <Typography
           align="center"

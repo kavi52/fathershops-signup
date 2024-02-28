@@ -15,6 +15,7 @@
     "emailRequired": "Email is required",
     "emailPattern": "Enter a valid email",
     "passwordRequired": "Password is required",
-    "passwordPattern": "Password should contain one Capital Letter, one Small Letter, and the number of characters should be between 6 to 15"
+    "passwordPattern": "Password should contain one Capital Letter, one Small Letter, and the number of characters should be between 6 to 15",
+    "mobileNumberRequired": "Phone number is required"
   }
 }

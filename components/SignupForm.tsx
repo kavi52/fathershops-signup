@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import { Controller, FieldValues, SubmitHandler, useForm } from 'react-hook-form';
-import { Box, Button, IconButton, InputAdornment, TextField, Typography } from '@mui/material';
+import { Box, Button, IconButton, InputAdornment, Snackbar, TextField, Typography } from '@mui/material';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 import Image from 'next/image';
@@ -46,13 +46,14 @@ const SignupForm = ({
   emailPattern,
   passwordPattern,
   passwordRequired,
-  mobileNumberRequired
 }: SignupFormProps) => {
-  const { register, handleSubmit, formState: { errors }, control } = useForm<FormData>();
+  const { register, handleSubmit, formState: { errors }, control, reset } = useForm<FormData>();
+  const [open, setOpen] = useState(false)
   const [showPassword, setShowPassword] = useState(false);
 
   const onSubmit: SubmitHandler<FieldValues> = (data: any) => {
-
+    setOpen(true)
+    reset()
   };
 
   const handleTogglePasswordVisibility = () => {
@@ -163,7 +164,6 @@ const SignupForm = ({
           control={control}
           international
           countryCallingCodeEditable={false}
-          rules={{ required: mobileNumberRequired }}
           defaultCountry="US"
           className='bg-[#D9D9D94D] p-2 pl-4 mt-3 mb-1 rounded-md'
         />
@@ -248,6 +248,12 @@ const SignupForm = ({
         }}>
         {alreadyHaveAccountMessage} <Link href={'#'}><b>{loginLabel}</b></Link>
       </Typography>
+      <Snackbar
+        open={open}
+        autoHideDuration={6000}
+        onClose={() => setOpen(false)}
+        message="Registered Successfully"
+      />
     </div>
   );
 };

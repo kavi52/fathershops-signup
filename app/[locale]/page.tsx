@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen">
       <div
-        className="flex flex-1 flex-col min-h-screen p-8 pb-10"
+        className="flex flex-1 flex-col min-h-screen p-6 pb-10"
       >
         <LanguageSwitcher />
         <SignupForm 
@@ -47,7 +47,7 @@ export default function Home() {
         <Typography
           align="left"
           sx={{
-            fontSize: '24px',
+            fontSize: ['20px', '20px', '20px', '20px','24px'],
             fontWeight: '600',
             color: '#ffffff'
           }}
@@ -57,7 +57,7 @@ export default function Home() {
         <Typography
           align="left"
           sx={{
-            fontSize: '20px',
+            fontSize: ['16px', '16px','16px', '16px', '20px'],
             fontWeight: '300',
             color: '#F6F6F6',
             marginY: 1

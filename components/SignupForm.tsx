@@ -51,7 +51,8 @@ const SignupForm = ({
   const { register, handleSubmit, formState: { errors }, control } = useForm<FormData>();
   const [showPassword, setShowPassword] = useState(false);
 
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+  const onSubmit: SubmitHandler<FieldValues> = (data: any) => {
+
   };
 
   const handleTogglePasswordVisibility = () => {
@@ -65,19 +66,25 @@ const SignupForm = ({
         backgroundColor: '#FFFFFF',
       }}
     >
-
-      <Image
-        src={'/fathershop-white-logo.png'}
-        alt="FatherShops logo"
-        width={246}
-        height={40}
-      />
+      <Box
+        position={'relative'}
+        sx={{
+          width: ['200px', '200px', '200px', '200px', '246px'],
+          height: ['32px', '32px', '32px', '32px', '40px']
+        }}
+      >
+        <Image
+          src={'/fathershop-white-logo.png'}
+          alt="FatherShops logo"
+          fill
+        />
+      </Box>
 
       <Typography sx={{
-        fontSize: '28px',
+        fontSize: ['22px', '22px', '22px', '22px', '28px'],
         fontWeight: '500',
-        marginTop: 4,
-        marginBottom: 2
+        marginTop: [2, 2, 2, 2, 4],
+        marginBottom: [1, 1, 1, 1, 2]
       }}>{title}</Typography>
 
       <form
@@ -86,16 +93,18 @@ const SignupForm = ({
       >
         <TextField
           label={fullNameLabel}
-          margin="normal"
-          variant='filled'
+          margin="dense"
+          variant='outlined'
           size='small'
           fullWidth
+          sx={{
+            "& fieldset": {
+              border: 'none',
+            },
+          }}
           InputLabelProps={{
             style: {
               color: '#11111166',
-              borderWidth: '0px',
-              paddingLeft: '5px',
-              paddingRight: '5px'
             }
           }}
           InputProps={{
@@ -103,9 +112,6 @@ const SignupForm = ({
             style: {
               backgroundColor: '#D9D9D94D',
               borderRadius: '8px',
-              borderWidth: '0px',
-              paddingLeft: '5px',
-              paddingRight: '5px'
             },
           }}
           inputProps={{
@@ -117,16 +123,18 @@ const SignupForm = ({
         />
         <TextField
           label={emailLabel}
-          margin="normal"
-          variant='filled'
+          margin="dense"
+          variant='outlined'
           size='small'
           fullWidth
+          sx={{
+            "& fieldset": {
+              border: 'none',
+            },
+          }}
           InputLabelProps={{
             style: {
               color: '#11111166',
-              borderWidth: '0px',
-              paddingLeft: '5px',
-              paddingRight: '5px'
             }
           }}
           InputProps={{
@@ -134,9 +142,6 @@ const SignupForm = ({
             style: {
               backgroundColor: '#D9D9D94D',
               borderRadius: '8px',
-              borderWidth: '0px',
-              paddingLeft: '5px',
-              paddingRight: '5px'
             },
           }}
           inputProps={{
@@ -160,21 +165,24 @@ const SignupForm = ({
           countryCallingCodeEditable={false}
           rules={{ required: mobileNumberRequired }}
           defaultCountry="US"
-          className='bg-[#D9D9D94D] p-4 mt-4 mb-2 rounded-md'
-          />
+          className='bg-[#D9D9D94D] p-2 pl-4 mt-3 mb-1 rounded-md'
+        />
         <TextField
           label={passwordLabel}
           type={showPassword ? 'text' : 'password'}
-          margin="normal"
-          variant='filled'
+          margin="dense"
+          variant='outlined'
           size='small'
+          sx={{
+            "& fieldset": {
+              border: 'none',
+            },
+          }}
           fullWidth
           InputLabelProps={{
             style: {
               color: '#11111166',
               borderWidth: '0px',
-              paddingLeft: '5px',
-              paddingRight: '5px'
             }
           }}
           InputProps={{
@@ -182,12 +190,9 @@ const SignupForm = ({
             style: {
               backgroundColor: '#D9D9D94D',
               borderRadius: '8px',
-              borderWidth: '0px',
-              paddingLeft: '5px',
-              paddingRight: '5px'
             },
             endAdornment: (
-              <InputAdornment position="end" sx={{ marginRight: 2 }}>
+              <InputAdornment position="end">
                 <IconButton
                   aria-label="toggle password visibility"
                   onClick={handleTogglePasswordVisibility}

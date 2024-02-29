@@ -25,7 +25,7 @@ const BoxGrid = () => {
 
     return (
         <Box className={'overflow-y-auto scroll-hidden pt-2'} style={{ scrollbarWidth: 'none' }}>
-            <Masonry columns={3} spacing={3} sequential>
+            <Masonry columns={3} spacing={[2, 2, 2, 2, 3]} sequential>
                 {boxData.map((item, index) => (
                     <Paper
                         key={index}
